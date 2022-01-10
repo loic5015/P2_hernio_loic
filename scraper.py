@@ -12,12 +12,12 @@ def compiler_fichier_csv(data, categorie, current_directory):
     entete = ["product_page_url", "universal_ product_code (upc)", "title",
               "price_including_tax", "price_excluding_tax", "number_available", "product_description",
               "category", "review_rating", "image_url"]
-    if not os.path.exists(os.path.join(current_directory, "csv")):
+    """if not os.path.exists(os.path.join(current_directory, "csv")):
         os.mkdir(os.path.join(current_directory, "csv"))
     directory_travail = os.path.join(current_directory, "csv\\"+categorie)
     os.mkdir(directory_travail)
-    os.chdir(directory_travail)
-    with open('resultat_scrapping.csv', 'w', encoding="utf-8") as file:
+    os.chdir(directory_travail)"""
+    with open('resultat_scrapping_'+categorie+'.csv', 'w', encoding="utf-8", newline='') as file:
         writer = csv.writer(file, delimiter=',')
         writer.writerow(entete)
         print(data)
